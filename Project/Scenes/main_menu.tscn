@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://k6wpxdwpaksq"]
+[gd_scene load_steps=2 format=3 uid="uid://k6wpxdwpaksq"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_mfbud"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mfbud")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -30,3 +33,8 @@ text = "Water Chaos"
 [node name="Crate Runner" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Crate Runner"
+
+[connection signal="pressed" from="VBoxContainer/Maze Game" to="." method="_on_maze_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Space Shooter" to="." method="_on_space_shooter_pressed"]
+[connection signal="pressed" from="VBoxContainer/Water Chaos" to="." method="_on_water_chaos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Crate Runner" to="." method="_on_crate_runner_pressed"]
